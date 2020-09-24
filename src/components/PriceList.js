@@ -1,4 +1,5 @@
 import React from 'react';
+import Ionicon from 'react-ionicons';
 
 const PriceList = ({ items, onModifyItem, onDeleteItem }) => {
     return (
@@ -8,8 +9,16 @@ const PriceList = ({ items, onModifyItem, onDeleteItem }) => {
                     key={item.id}
                     className="list-group-item d-flex justify-content-between align-items-center"
                 >
-                    <span className="col-1 badge badge-primary">
-                        {item.category.name}
+                    <span className="col-1 badge badge-secondary">
+                        <Ionicon
+                            className="rounded-circle"
+                            font-size="30px"
+                            style={{
+                                padding: '5px',
+                            }}
+                            color={'#fff'}
+                            icon={item.category.iconName}
+                        ></Ionicon>
                     </span>
                     <span className="col-5">{item.title}</span>
                     <span className="col-2 font-weight-bold">
@@ -17,18 +26,30 @@ const PriceList = ({ items, onModifyItem, onDeleteItem }) => {
                         {item.price}元
                     </span>
                     <span className="col-2">{item.date}</span>
-                    <button
-                        className="col-1 btn btn-primary"
-                        onClick={() => onModifyItem(item)}
-                    >
-                        編輯
-                    </button>
-                    <button
-                        className="col-1 btn btn-danger"
-                        onClick={() => onDeleteItem(item)}
-                    >
-                        刪除
-                    </button>
+                    <a className="col-1" onClick={() => onModifyItem(item)}>
+                        <Ionicon
+                            className="rounded-circle"
+                            font-size="30px"
+                            style={{
+                                backgroundColor: '#28a745',
+                                padding: '5px',
+                            }}
+                            color={'#fff'}
+                            icon={'ios-create-outline'}
+                        ></Ionicon>
+                    </a>
+                    <a className="col-1" onClick={() => onDeleteItem(item)}>
+                        <Ionicon
+                            className="rounded-circle"
+                            font-size="30px"
+                            style={{
+                                backgroundColor: '#dc3545',
+                                padding: '5px',
+                            }}
+                            color={'#fff'}
+                            icon={'ios-close'}
+                        ></Ionicon>
+                    </a>
                 </li>
             ))}
         </ul>
