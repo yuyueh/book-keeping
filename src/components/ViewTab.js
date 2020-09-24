@@ -11,11 +11,11 @@ const generateLinkClass = (current, view) => {
 
 const ViewTab = ({ activeTab, onTabChange }) => {
     return (
-        <ul class="nav nav-tabs nav-fill">
+        <ul className="nav nav-tabs nav-fill">
             <li className="nav-item">
                 <a
                     className={generateLinkClass(activeTab, LIST_VIEW)}
-                    href="javascript:void(0)"
+                    href="#"
                     onClick={(e) => {
                         e.preventDefault();
                         onTabChange(LIST_VIEW);
@@ -33,7 +33,7 @@ const ViewTab = ({ activeTab, onTabChange }) => {
             <li className="nav-item">
                 <a
                     className={generateLinkClass(activeTab, CHART_VIEW)}
-                    href="javascript:void(0)"
+                    href="#"
                     onClick={(e) => {
                         e.preventDefault();
                         onTabChange(CHART_VIEW);

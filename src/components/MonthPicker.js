@@ -61,7 +61,7 @@ class MonthPicker extends PureComponent {
         const yearRange = generateRange(9, selectedYear - 4);
         const monthRange = generateRange(12, 1);
         return (
-            <div class="dropdown">
+            <div className="dropdown">
                 <button
                     className="btn btn-secondary dropdown-toggle"
                     type="button"
@@ -83,7 +83,7 @@ class MonthPicker extends PureComponent {
                                         item,
                                         selectedYear
                                     )}
-                                    href="javascript:void(0)"
+                                    href="#"
                                     onClick={(e) => {
                                         this.handleYearChange(e, item);
                                     }}
@@ -100,7 +100,7 @@ class MonthPicker extends PureComponent {
                                         item,
                                         selectedMonth
                                     )}
-                                    href="javascript:void(0)"
+                                    href="#"
                                     onClick={(e) => {
                                         this.handleMonthChange(e, item);
                                     }}
