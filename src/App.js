@@ -19,7 +19,13 @@ const data = [
 ];
 
 function App() {
-    return <PriceList items={data}></PriceList>;
+    return (
+        <PriceList
+            items={data}
+            onModifyItem={console.log}
+            onDeleteItem={console.log}
+        ></PriceList>
+    );
 }
 
 export default App;
